@@ -34,7 +34,7 @@ int main_menu(){
     }
     return num;
 }
-void add_goat(list<Goat> &trip, string names[], string colors[]){
+void add_goat(set<Goat> &trip, string names[], string colors[]){
     //randomly select a name and color from main()'s arrays and select a random age between 0 and MAX_AG
     int nameI = rand()% SZ_NAMES; //these are the positions or the index
     int colorI = rand()% SZ_COLORS;
