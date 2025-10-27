@@ -31,7 +31,9 @@ public:
      bool operator< (const Goat &other) const {
         if (name != other.name)
             return name < other.name;
-        return age < other.age;
+        if (age != other.age)
+            return age < other.age;
+        return color < other.color;
     }
 
 };
