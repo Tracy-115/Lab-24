@@ -41,7 +41,7 @@ void add_goat(set<Goat> &trip, string names[], string colors[]){
     int age = rand()% (MAX_AGE+1);
 
     Goat g(names[nameI], age, colors[colorI]); //this takes back to the constructor int goat.h
-    trip.push_back(g);
+    trip.insert(g);
 
     cout << "New goat: ";
     g.display();
