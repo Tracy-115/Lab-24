@@ -1,9 +1,9 @@
-// Kyawt Thinzar Min | Lab 23
+// Kyawt Thinzar Min | Lab 24
 //IDE: VS code
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <list>
+#include <set>
 #include <cstdlib>
 #include <ctime>
 #include "Goat.h"
@@ -11,10 +11,10 @@ using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
-int select_goat(list<Goat> trip);
-void delete_goat(list<Goat> &trip);
-void add_goat(list<Goat> &trip, string [], string []);
-void display_trip(list<Goat> trip);
+int select_goat(set<Goat> trip);
+void delete_goat(set<Goat> &trip);
+void add_goat(set<Goat> &trip, string [], string []);
+void display_trip(set<Goat> trip);
 int main_menu();
 
 int main_menu(){
@@ -46,7 +46,7 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
     cout << "New goat: ";
     g.display();
 }
-void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
+void display_trip(set<Goat> trip){ //the choices are going to be displayed in the format [number] information
     if (trip.empty()){
         cout << "It is empty" << endl;
         return;
@@ -59,7 +59,7 @@ void display_trip(list<Goat> trip){ //the choices are going to be displayed in t
         a++;
     }
 }
-int select_goat(list<Goat> trip){
+int select_goat(set<Goat> trip){
     display_trip(trip);
     cout << "Which spot would you like to delete --> "; //the user will have to make a choice 
     int choice;
@@ -70,7 +70,7 @@ int select_goat(list<Goat> trip){
     }
     return choice -1;
 }
-void delete_goat(list<Goat> &trip){//this si for the delete choice 
+void delete_goat(set<Goat> &trip){//this si for the delete choice 
     if (trip.empty()){
         cout << "The list is empty." << endl;
         return;
@@ -93,7 +93,7 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
 int main() {
     srand(time(0));
     bool again =true;
-    list<Goat> trip;
+    set<Goat> trip;
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
     string names[SZ_NAMES];
